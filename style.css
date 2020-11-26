@@ -1,0 +1,1220 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    /*z-index: 9;*/
+}
+canvas{
+    z-index: 0;
+}
+body
+{
+    background: #fafafa;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    
+}
+li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+p, li, a, h3, h1, h2, h4, h5{
+    font-size: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+h5{
+    font-size: 14px;
+    margin-top: 15px;
+}
+button{
+    border: none;
+    outline: none;
+}
+
+
+#finallyGoods{
+    display: none;
+}
+
+
+/*Бургерное меню*/
+.burger_menu{
+    display: none;
+}
+#burger{
+    position: fixed;
+    right: 0;
+    top: 0;
+    color: #fff;
+    background: linear-gradient(45deg, #9682C8 10%, #05BCC9);;
+    font-size: 32px;
+    padding: 16px 16px 32px 32px;
+    border-radius: 0% 0% 0% 100%;
+    transition: 1s;
+    cursor: pointer;
+    z-index: 15;
+}
+
+#quit{
+    position: fixed;
+    top: 0;
+    color: #fff;
+    font-size: 32px;
+    padding: 16px;
+    display: none;
+    cursor: pointer;
+    left: 1%;
+    z-index: 17;
+}
+
+#links{
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    height: 50vh;
+    padding: 25vh 0;
+    justify-content: space-around;
+    position: fixed;
+    right: 1%;
+    z-index: 15;
+}
+
+#links a{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    z-index: 10;
+}
+/*корзина*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.wrapper{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+#cartHeader{
+    margin-bottom: 100px;
+}
+.goodsBlock{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #17aba6;
+}
+#cartContainer{
+    min-height: 300px;
+}
+.radio{
+    font-size: 18px;
+    margin-top: 5px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/*Блок с товаром*/
+.myOwnCart {
+    display: flex;
+    position: relative;
+}
+.myOwnCart p{
+    margin-top: 100px;
+    margin-left: 25px;
+}
+
+
+/*Лупа для изображения*/
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Установите размер стекла лупы:*/
+    width: 100px;
+    height: 100px;
+}
+
+
+/*к-ство и сумма товара*/
+.myCartManipulation{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.myCartManipulation span{
+    font-size: 25px;
+}
+.sumGoods{
+    display: flex;
+    flex-direction: column;
+}
+.sumGoods button{
+    background: #fafafa;
+    color: #000;
+    font-size: 15px;
+    margin-top: 25px;
+}
+.amountGoods{
+    border: 1px solid #17aba6;
+    border-radius: 25px;
+    width: 125px;
+    height: 30px;
+    margin-right: 25px;
+
+}
+.amountGoods span{
+    margin: 25px;
+}
+.minus, .plus{
+
+    font-size: 20px;
+    color: #17aba6;
+    background: #fafafa;
+    height: 20px;
+}
+.minus{
+    margin-left: 21px;
+}
+.cartImg{
+    width: 150px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+
+}
+.cart{
+    position: fixed;
+    left: 95%;
+    top: 5%;
+    z-index: 1;
+}
+.cart img{
+    width: 48px;
+}
+
+.checkoutButton{
+    background: #bdeced;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-right: 150px;
+    text-decoration: none;
+    height: 35px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 rgba(23, 171, 166, 1);
+    float: right;
+
+}
+.checkoutButton p{
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 7.5px;
+}
+.checkoutButton:hover{
+    animation-name: boxshadow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+/*Form*/
+
+.modalBlock{
+    display: block;
+    margin: 10% auto;
+    width:60%;
+    height: 80%;
+    background-color: #fafafa;
+    border-radius:5px;
+    box-shadow: 0 0 10px #000;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+    z-index: 10;
+}
+.modalBlock h2{
+    color: #17aba6;
+    margin: 50px auto;
+}
+.back{
+    background: #bdeced;
+    list-style: none;
+    height: 35px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 rgba(23, 171, 166, 1);
+    margin: 50px 0;
+
+}
+.back:hover{
+    animation-name: boxshadow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.b-popup{
+    width:100%;
+    min-height:100%;
+    /*background-color: rgba(0,0,0,0.5);*/
+    overflow:hidden;
+    position:absolute;
+    top:10px;
+}
+.b-popup .b-popup-content{
+    margin:10px auto 10px auto;
+    width:80%;
+    min-height: 500px;
+    padding:10px;
+    background-color: #fafafa;
+    border-radius:5px;
+    box-shadow: 0 0 10px #000;
+}
+
+.orderStep{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+}
+#orderForm {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin: 50px auto;
+position: relative;
+}
+#orderForm label .inputForm{
+    width: 100%;
+    border-bottom: 1px solid #17aba6;
+}
+
+.inputForm{
+    display: inline-block;
+    border: none;
+    margin-bottom: 25px;
+    background: #fafafa;
+}
+.dataFromCart{
+    margin-top: 25px;
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+#submit{
+    background: #bdeced;
+    text-decoration: none;
+    height: 35px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 rgba(23, 171, 166, 1);
+    display: inline-block;
+    border: none;
+    margin: 35px auto;
+}
+#submit:hover{
+    animation-name: boxshadow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+#order {
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    background: #bdeced;
+    border: none;
+    margin-top: 35px;
+    float: right;
+}
+
+
+.sumParam{
+    position: fixed;
+    color: black;
+    background: #ffd4e7;
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
+    left: 97%;
+    top: 4.5%;
+    z-index: 2;
+}
+
+.cartData{
+    display: none;
+}
+
+
+
+
+
+.emptyCart{
+    margin: 100px 25%;
+    font-size: 22px;
+    color: #17aba6;
+}
+
+.choose{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.totalPrice{
+    margin-top: 50px;
+    float: right;
+    display: flex;
+}
+.totalPrice h3{
+    margin-right: 10px;
+    padding-top: 2px;
+    color: #17aba6;
+}
+.totalPrice p{
+    padding-top: 5px;
+    margin-left: 5px;
+}
+.sum{
+    font-size: 25px;
+}
+form h2{
+    margin-top: 25px;
+}
+.textTest{
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+#city{
+    margin-top: 25px;
+}
+.payment{
+     margin-top: 5px;
+}
+
+#topradio{
+    margin-top:25px;
+}
+
+
+
+/*шапка*/
+
+header{
+    background: #bdeced;
+    height: 100px;
+    z-index: 9;
+}
+header ul{
+    display: flex;
+}
+header li{
+    margin-left: 50px;
+     z-index: 9;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+.nav li{
+    font-size: 25px;
+    color: #402661;
+    margin-top: 50px;
+     z-index: 9;
+}
+.nav li:hover{
+    transform: scale(1.1);
+}
+
+.logo img{
+    height: 125px;
+    width: 200px;
+}
+
+/*главный блок*/
+.main_block{
+    min-height: 500px;
+    background: linear-gradient(#bdeced, #ffd4e7);
+
+}
+#main{
+    display: flex;
+    justify-content: space-between;
+}
+#main img{
+    width: 600px;
+    height: 600px;
+}
+#main h1{
+    margin-top: 150px;
+}
+#main span{
+    font-size: 30px;
+}
+.main_text button{
+    font-size: 22px;
+    background: #bdeced;
+    list-style: none;
+    height: 45px;
+    width: 200px;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 rgba(23, 171, 166, 1);
+    margin-top: 50px;
+     z-index: 9;
+}
+.main_text button:hover{
+    animation-name: boxshadow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes boxshadow {
+    0%{
+        box-shadow: 0 5px 0 rgba(23, 171, 166, 1);
+    }
+
+    100%{
+        box-shadow: 0 0 0 rgba(23, 171, 166, 1);
+    }
+}
+.main_text button:after{
+    box-shadow: 0 0 0 rgba(23, 171, 166, 1);
+}
+.main_text p{
+    margin-top: 50px;
+}
+.main_text h2{
+    color: #ae6fdd;
+    text-align: left;
+    margin: 10px 0;
+}
+.main_text span{
+    /*color: #17aba6;*/
+}
+
+
+/*блок категорий*/
+.category{
+    /*height: 400px;*/
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.category img{
+    width: 325px;
+    height: 325px;
+    
+}
+
+#woman h2{
+    margin-top: 10px;
+}
+#woman {
+    background: #ffd4e7;
+    border-radius: 0 0 50px 50px;
+    text-align: center;
+}
+#kids h2{
+    margin-top: 10px;
+}
+#kids {
+    background: #ae6fdd;
+    border-radius: 0 50px 0 50px ;
+    text-align: center;
+}
+#man h2{
+    margin-top: 10px;
+}
+#man {
+    background: #bdeced;
+    border-radius: 50px 0 50px 0;
+    text-align: center;
+}
+#categoryh{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+/*Пралакс текст*/
+#discountText{
+    position: relative;
+    height: 100px;
+    z-index: -1;
+}
+#textparallax{
+    margin-top: 150px;
+}
+
+
+
+
+
+/*Блок с товарами*/
+#bestOffer{
+    display: flex;
+}
+.bestOfferText h3{
+    margin-top: 150px;
+}
+.goods{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-basis: 33% 33%;
+}
+.addToBag{
+    display: block;
+    margin: 25px 120px;
+    background: #bdeced;
+    list-style: none;
+    height: 25px;
+    width: 100px;
+    border-radius: 25px;
+    box-shadow: 0 5px 0 rgba(23, 171, 166, 1);
+
+}
+.addToBag:hover{
+    animation-name: boxshadow;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.single-goods{
+    width: 350px;
+    height: 450px;
+    margin: 10px;
+    float: left;
+    text-align: center;
+    background: #fff;
+}
+.single-goods img{
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+}
+.single-goods h3{
+    height: 10px;
+    margin-top: 10px;
+    color: #17aba6;
+}
+.single-goods h3:hover{
+    transform: scale(1.1);
+}
+.single-goods a{
+    text-decoration: none;
+
+}
+.single-goods p{
+    margin-top: 75px;
+}
+
+
+/*подвал*/
+footer {
+    background-color: #402661;
+    padding: 120px 0 60px;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 100%;
+}
+.footer_context{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_context a{
+     text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+}
+.footer_context li:hover{
+    transform: scale(1.1);
+}
+.footer_context li{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.footer_context h4{
+    font-size: 35px;
+    color: #ffd4e7;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/*СТРАНИЦА С КАТЕГОРИЯМИ*/
+
+#category_page{
+    margin-top: 50px;
+}
+.wmk{
+    display: flex;
+    /*flex: 33%;*/
+    justify-content: center;
+    max-width: 100%;
+}
+.wm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.wmk img{
+    width: 350px;
+    height: 200px;
+    border: 1px solid #ffd4e7;
+
+}
+.wm img{
+    display: block;
+    width: 300px;
+    height: 150px;
+}
+
+
+
+
+
+
+
+
+
+/*DETAILS PAGE*/
+#detailsContainer{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+}
+#detailsContainer h2{
+    margin-top: 35px;
+}
+#detailsContainer h5{
+    color: #17aba6;
+    font-size: 20px;
+}
+.goodsDescription{
+    margin-top: 50px;
+
+}
+.goodsDescription p, h2{
+    margin-top: 35px;
+    max-width: 450px;
+}
+/*goods Slider*/
+
+.img-max{
+    /*display: block;*/
+
+}
+.img-min{
+    display: flex;
+    justify-content: space-between;
+}
+.goods-min{
+    margin-top: 5px;
+    width: 130px;
+}
+.goods-max{
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+}
+
+
+/*Страница с доставкой*/
+#delivery_container{
+    display: flex;
+
+    justify-content: space-between;
+    margin-top: 100px;
+}
+#delivery_container img{
+    max-width: 500px;
+    max-height: 400px;
+
+}
+
+.list_text{
+    margin-top: 25px;
+}
+.list{
+    margin-top: 50px;
+}
+.text_text{
+    margin-top: 5px;
+}
+
+/*Страница платы*/
+#payment_body{
+    background: #fff;
+}
+#payment_container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+#payment_container li{
+    list-style: disc;
+}
+.order_text{
+    margin-left: 50px;
+}
+.order_text p{
+    margin-top: 25px;
+}
+#payment_container img{
+    max-height: 500px;
+}
+
+/*Страница с мужским товаром*/
+.manGoodsPage, .decoration, .corporateGoods, .giftSet, .womanGoods, .kidsGoods, .christmasTrees, .edibleGifts, .homeInterior, .package{
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 15px;
+
+}
+#sort_top{
+    margin-top: 50px;
+    width: 150px;
+    height: 35px;
+    background: #bdeced;
+}
+#sort_bottom{
+    margin-top: 50px;
+    width: 150px;
+    height: 35px;
+    background: #ffd4e7;
+}
+/*Страница с детальным отображением товара*/
+.mainSlider{
+    position: relative;
+}
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Установите размер стекла лупы:*/
+    width: 100px;
+    height: 100px;
+}
+/*Страница возврата*/
+#refund{
+    margin-top: 50px;
+}
+#refund h1,h2{
+    text-align: center;
+    margin: 35px auto 0 auto;
+}
+#refund p{
+    margin-top: 15px;
+}
+#refund ul{
+    margin-top: 20px;
+}
+#refund li{
+    margin-top: 15px;
+    margin-left: 50px;
+}
+#return_ul li{
+    list-style-type: decimal;
+}
+.point_li li{
+    list-style-type: disc;
+}
+/*условия конф*/
+#secure_container{
+    /*margin-top: 50px;*/
+}
+#secure_container p span{
+    font-weight: bold;
+}
+#secure_container h1{
+    text-align: center;
+    margin: 30px auto;
+}
+#secure_container h2{
+    margin: 30px auto;
+}
+#secure_container p{
+    margin-top: 15px;
+}
+#secure_container li{
+    margin-top: 15px;
+    margin-left: 50px;
+}
+#attantion_ul{
+    font-weight: bold;
+}
+
+
+
+
+/*КОНТАКТЫ*/
+
+
+#contacts_container{
+    margin-top: 75px;
+    text-align: center;
+}
+#contacts_container h2{
+    margin-top: 50px;
+}
+#contacts_container h1{
+    text-align: left;
+}
+#main_cantacts_text{
+    text-align: left;
+}
+#inn{
+    margin-top: 50px;
+}
+.choosecontacts{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.call, .wright_us{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+.call img{
+    width: 300px;
+    height: 300px;
+}
+.call_text{
+    margin-top: 100px;
+    max-width: 500px;
+}
+.media_icons {
+    margin-top: 100px;
+    width: 300px;
+}
+.message{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin: 25px auto;
+}
+.message img{
+    position: relative;
+    width: 50px;
+}
+#media_girl{
+    width: 300px;
+    height: 300px;
+}
+#vkicon, #instagrmicon, #facebookicon{
+    margin-top: 5px;
+}
+
+
+/*Стрелка*/
+.up{
+    position: fixed;
+    left: 95%;
+    top: 75%;
+    z-index: 12;
+}
+.up img{
+    width: 35px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .container{
+        max-width: 950px;
+    }
+    header li{
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    .category img{
+        width: 250px;
+        height: 250px;
+    }
+    .footer_context h4{
+        font-size: 30px;
+    }
+    .manGoodsPage, .decoration, .corporateGoods, .giftSet, .womanGoods, .kidsGoods, .christmasTrees, .edibleGifts, .homeInterior, .package {
+        margin: 25px 100px;
+    }
+}
+@media (max-width: 1025px){
+    .container{
+        max-width: 750px;
+    }
+    .cart{
+        left: 94%;
+    }
+    header li{
+        font-size: 15px;
+    }
+    #bestOffer{
+        flex-direction: column;
+    }
+    .footer_context h4{
+        font-size: 25px;
+    }
+    #main img{
+        width: 500px;
+        height: 500px;
+    }
+    .manGoodsPage, .decoration, .corporateGoods, .giftSet, .womanGoods, .kidsGoods, .christmasTrees, .edibleGifts, .homeInterior, .package {
+        margin: 25px 75px;
+    }
+    #detailsContainer {
+        justify-content: space-between;
+    }
+    .goods-max {
+        width: 300px;
+        height: 300px;
+    }
+    .goods-min{
+        width: 100px;
+    }
+    .mainSlider{
+        margin-right: 50px;
+    }
+    .wmk img{
+        width: 300px;
+        height: 175px;
+    }
+}
+@media (max-width: 991.98px) {
+    .cart{
+        left: 93%;
+    }
+    header ul{
+        margin-right: 50px;
+    }
+    header li{
+        margin-left: 15px;
+    }
+    .category img{
+        width: 200px;
+        height: 200px;
+    }
+    .goodsBlock{
+        flex-direction: column;
+    }
+    .cartImg {
+        margin-top: 25px;
+    }
+    .manGoodsPage, .decoration, .corporateGoods, .giftSet, .womanGoods, .kidsGoods, .christmasTrees, .edibleGifts, .homeInterior, .package {
+        margin: 25px 50px;
+    }
+    .goodsDescription h3, p, h2{
+        font-size: 16px;
+    }
+    .wmk img{
+        width: 225px;
+        height: 125px;
+    }
+    .up {
+        left: 93%;
+    }
+}
+@media (max-width: 767.98px) {
+    #main{
+        flex-direction: column;
+    }
+    #main img{
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .logo img{
+        height: 100px;
+        width: 150px;
+    }
+    header li{
+        font-size: 12px;
+    }
+    header ul{
+        margin-right: 25px;
+    }
+    .cart{
+        left: 93%;
+        top: 15%;
+    }
+    .sumParam{
+        top: 14.5%;
+    }
+    .single-goods{
+        margin: 0 auto;
+    }
+    .category img{
+        width: 175px;
+        height: 175px;
+    }
+    .category h2{
+        font-size: 18px;
+    }
+    .footer_context h4{
+        font-size: 22px;
+        margin-right: 10px;
+    }
+    #delivery_container{
+        flex-direction: column;
+    }
+    #delivery_container img{
+        margin: 0 auto;
+    }
+    .delivery_text{
+        margin: 0 auto;
+        font-size: 18px;
+    }
+    .cartImg {
+        width: 100px;
+
+    }
+    .manGoodsPage, .decoration, .corporateGoods, .giftSet, .womanGoods, .kidsGoods, .christmasTrees, .edibleGifts, .homeInterior, .package {
+        margin: 25px auto;
+    }
+    #detailsContainer{
+        flex-direction: column;
+    }
+    .mainSlider{
+        width: 300px;
+        margin: 0 auto;
+    }
+    #payment_container{
+        flex-direction: column;
+    }
+    #payment_container img{
+        width: 300px;
+        margin: 0 auto;
+    }
+    #orderForm{
+        width: 100%;
+    }
+    
+}
+@media (max-width: 575.98px) {
+    .cart{
+        left: 91%;
+    }
+    .category div{
+        margin: 0 auto;
+    }
+    .category{
+        flex-direction: column;
+    }
+    .category img{
+        width: 250px;
+        height: 250px;
+    }
+    #woman{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .footer_context h4{
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    #delivery_container img{
+        width: 400px;
+        height: 300px;
+    }
+    .addToBag {
+        margin: 25px 100px;
+    }
+    .wmk{
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .wmk img{
+        width: 350px;
+        height: 200px;
+    }
+    .call, .wright_us{
+        flex-direction: column;
+    }
+    .call img{
+        margin: 0 auto;
+    }
+    .media_icons, #media_girl{
+        margin: 0 auto;
+
+    }
+    .up {
+        left: 90%;
+    }
+    
+}
+@media (max-width: 454.98px) {
+    .cart{
+        left: 85%;
+    }
+    /*кружек над тележкой*/
+    .sumParam{
+        left: 95%;
+    }
+    .single-goods{
+        width: 300px;
+    }
+
+    .footer_context{
+        flex-flow: column;
+    }
+    .footer_context div{
+        margin: 0 auto;
+        text-align: center;
+    }
+    #delivery_container img{
+        width: 300px;
+        height: 200px;
+    }
+    #main img{
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .cartImg {
+        height: 100px;
+        margin-top: 75px;
+    }
+    #button_container{
+        display: flex;
+    }
+    
+
+}
+@media (max-width: 374.98px) {
+    .wmk img{
+        width: 300px;
+        height: 150px;
+    }
+
+}
+@media (max-width: 319.98px) {
+    body {
+        align-self: center;
+    }
+    #button_container{
+        display: flex;
+    }
+}

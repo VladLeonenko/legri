@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FFPD7JN0N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4FFPD7JN0N');
+</script>
+    <meta charset="UTF-8">
+    <title>Корзина покупок новогодних товаров и подарков в Интернет-магазине.</title>
+    <meta name="description" content="Корзина с покупками legri.store, доставка по Москве и России.Подробнее 8 800 201-61-06"/>
+    <meta name="keywords" content=""/>
+    <meta name="owner" content="info@legri.store"/>
+    <meta name="robots" content="all"/>
+    <meta name="revisit-after" content="4 days"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="Author" lang="ru" content="Леоненко Владислав">
+    <meta name="Copyright" content="Леоненко Владислав">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="icon" href="fav/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="fav/site.webmanifest">
+    <link rel="mask-icon" href="fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+<header>
+    <div class="container" id="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png" alt="логотип LeGri"></a>
+        </div>
+        <div class="burger_menu">
+            <i id="burger" class="material-icons" onclick="burger()">menu</i>
+            <i id="quit" class="material-icons" onclick="quit()">clear</i>
+            <div id="links">
+                <a href="index.html">Главная</a>
+                <a href="category.html">Ассортимент</a>
+                <!--                    <a href="sales.html">Акции</a>-->
+                <a href="delivery.html">Доставка</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="category.html">Ассортимент</a></li>
+                <!--<a href="sales.html"><li>Акции</li></a>-->
+                <li><a href="delivery.html">Доставка</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="miniCart">
+
+    </div>
+</header>
+
+<div class="container" id="cartContainer">
+    <div class="myCart"></div>
+
+
+
+<div class="totalPrice">
+    <h3>Итоговая стоимость: </h3>
+    <div class="sum"></div>
+</div>
+
+
+</div>
+<div class="b-container">
+    <a class="checkoutButton" href="javascript:PopUpShow()"><p>Оформить заказ</p></a>
+</div>
+
+<div class="b-popup" id="popup1">
+    <div class="b-popup-content" >
+
+        <div class="orderStep">
+            <h2>Оформление заказа</h2>
+            <a href="javascript:PopUpHide()">X</a>
+        </div>
+        
+                    <form action="mail.php" method="post" id="orderForm">
+
+                        <label><input class="inputForm" type="text" placeholder="Имя" name="name" id="name" required></label>
+                        <label for="surname"><input class="inputForm" type="text" placeholder="Фамилия" name="surname" id="surname" required></label>
+                        <label><input class="inputForm" type="email" placeholder="Email" name="email" id="email" required></label>
+                        <label><input class="inputForm" type="tel" placeholder="телефон" name="tel" id="tel" required></label>
+
+
+
+                                
+                            
+                           
+                        <h2>Способ доставки</h2>
+                        <div class="radio" id="topradio">
+                                <input id="pickup" type="radio" name="delivery" data-type="Самовывоз" data-summa="0" checked="" value="самовывоз">
+                                <label class="label" for="pickup">
+                                    <span class="textTest">Самовывоз м. Отрадное (бесплатно)</span>
+                                </label>
+                        </div>
+                        <div class="radio">
+                            <input id="courier"  type="radio" name="delivery" data-type="courier" data-summa="250" checked="" value="по МСК">
+                            <label class="label" for="courier">
+                                <span class="textTest">Москва в пределах МКАД (250 рублей)</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <input id="couriermo"  type="radio" name="delivery" data-type="courier" data-summa="250" checked="" value="по МСК">
+                            <label class="label" for="couriermo">
+                                <span class="textTest">Московская область (от 300 рублей)</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <input id="daybyday"  type="radio" name="delivery" data-type="daybyday" data-summa="400" checked="" value="по МСК">
+                            <label class="label" for="daybyday">
+                                <span class="textTest">Срочная доставка в день заказа (400 рублей)</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <input id="countrydelivery"  type="radio" name="delivery" data-type="countrydelivery" data-summa="0" checked="" value="почта">
+                            <label class="label" for="countrydelivery">
+                                <span class="textTest">Доставка по России (от 350 рублей)</span>
+                            </label>
+                        </div>
+
+                        <h2>Адрес доставки:</h2>
+
+                        <label for="city"><input class="inputForm" type="text" placeholder="Город" name="city" id="city"></label>
+                        <label for="street"><input class="inputForm" type="text" placeholder="Улица" name="street" id="street"></label>
+                        <label for="house"><input class="inputForm" type="text" placeholder="Дом" name="house" id="house"></label>
+                        <label for="flat"><input class="inputForm" type="text" placeholder="Квартира" name="flat" id="flat"></label>
+
+                        <div class="dataFromCart" id="mail-body"></div>
+                        <label for="finallyGoods"><input type="text" id="finallyGoods" name="finallyGoods" value=""></label>
+                                 
+                        <div class="totalPrice">
+                            <h3>Итоговая стоимость: </h3>
+                            <div class="sum"></div>
+                            <p> руб. + доставка</p>
+                        </div>
+                        <div class="choose">
+                            <div class="payment">
+                                <input class="state" type="radio" id="online" name="payment" value="Оплата online">
+                                <label class="label" for="online">
+                                    <span class="textTest">Онлайн оплата</span>
+                                </label>
+                            </div>
+                            <div class="payment">
+                                <input class="state" type="radio" id="cash" name="payment" value="Наличными при получении">
+                                <label class="label" for="cash">
+                                    <span class="textTest">Наличными при получении</span>
+                                </label>
+                            </div>
+                            <div class="payment">
+                                <input class="state" type="radio" id="cart" name="payment" value="Картой при получении">
+                                <label class="label" for="cart">
+                                    <span class="textTest">Картой при получении</span>
+                                </label>
+                            </div>
+                        </div>
+                        <input type="submit" value="Оформить заказ" id="submit" onclick="ym(69398965,'reachGoal','sendForm'); return true;">
+
+                    </form>
+    </div>
+</div>
+<script src="libs/jquery-3.5.1.min.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/poPup.js"></script>
+<script src="js/burger.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(69398965, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/69398965" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
